@@ -1,0 +1,33 @@
+{
+    "name": "React-Isomorphic-Bootstrap-Base",
+    "author": "Dennis Norton",
+    "main": "server.js",
+    "version": "0.0.1",
+    "description": "A base Node.js project that implements React, React-Router, React-Bootstrap, Alt (Flux implementation), Browserify, and Express in an isomorphic fashion.",
+    "repository": "https://github.com/Mr-Antivirus/React-Isomorphic-Bootstrap-Base",
+    "engines": {
+        "node": "0.12.x"
+    },
+    "dependencies": {
+        "alt": "^0.15.6",
+        "body-parser": "^1.0.0",
+        "cookie-parser": "^1.0.0",
+        "ejs": "^2.3.1",
+        "express": "^4.0.0",
+        "react": "^0.13.1",
+        "react-bootstrap": "^0.21.0",
+        "react-router": "^0.13.1",
+        "react-youtube": "^3.1.0"
+    },
+    "devDependencies": {
+        "browserify": "^9.0.8",
+        "gulp": "~3.8.9",
+        "gulp-browserify": "^0.5.1",
+        "gulp-minify-css": "^0.5.1",
+        "gulp-uglify": "^1.2.0",
+        "gulp-watch": "^4.2.4",
+        "node-jsx": "~0.2.0",
+        "react-tools": "^0.13.1",
+        "reactify": "^1.1.0"
+    }
+}
