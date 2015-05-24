@@ -6,6 +6,18 @@ var FavoriteStore = require('../stores/favoriteStore');
 var LocationActions = require('../actions/locationActions');
 
 var LocationPage = React.createClass({
+	statics: {
+		// React-Router method. See -> http://rackt.github.io/react-router/#Route Handler
+		// Alternate implementation -> https://github.com/rackt/react-router/tree/master/examples/async-data
+		willTransitionTo: function (transition, params, query, callback) {
+			// When transitioning to this component, this action will be called to get 
+			// 	any necessary data. We pass callback to our action, so the action can
+			//	inform router that everything is good to go (sync). If we omit callback
+			//	from willTransitionTo params, it will be called for you (async), so your
+			//	data won't be rendered on first pass.
+			LocationActions.fetchLocations(callback);
+		}
+	},
     getStoreState: function () {
         return {
             locations: LocationStore.getState(),
@@ -18,7 +30,6 @@ var LocationPage = React.createClass({
     componentDidMount: function () {
         FavoriteStore.listen(this.onChange);
         LocationStore.listen(this.onChange);
-        LocationActions.fetchLocations();
     },
     componentWillUnmount: function () {
         LocationStore.unlisten(this.onChange);
@@ -33,7 +44,7 @@ var LocationPage = React.createClass({
     },
     render: function () {
         var self = this;
-
+		
         if (self.state.locations.errorMessage) {
             return (
                 React.createElement('div', null, self.state.locations.errorMessage)

@@ -12,7 +12,8 @@ var Index = React.createClass({
             React.createElement('div', null,
                 React.createElement(NavBar, null),
                 React.createElement('div', {className:'container'},
-                    React.createElement(RouteHandler, null)
+                    React.createElement('h2', null, 'Home page!'),
+                    React.createElement(RouteHandler, {key: 'index'})
                 )
             )
         )
