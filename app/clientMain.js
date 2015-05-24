@@ -9,11 +9,6 @@ var AppRoutes = require('./routes/appRoutes');
 window.React = React;
 window.ReactBootstrap = Bootstrap;
 
-
-// Needed for onTouchTap
-var injectTapEventPlugin = require("react-tap-event-plugin");
-injectTapEventPlugin();
-
 var mountNode = document.getElementById("react-main-mount");
 
 Router.run(AppRoutes, Router.HistoryLocation, function (Handler, state) {
